@@ -1,86 +1,87 @@
 # ============================================
-# LAB 1: Control Statements in Ruby
+# Лабораторная работа 1: Управляющие конструкции в Ruby
 # ============================================
-# Complete the following exercises to learn Ruby control flow.
-# Replace the 'nil' return values with your implementation.
-# Run this file with: ruby control_statements.rb
+# Выполните следующие упражнения, чтобы изучить управление потоком выполнения в Ruby.
+# Замените возвращаемые значения 'nil' своей реализацией.
+# Запустите этот файл командой: ruby c1_control_statements.rb
 
-# Exercise 1: If-else statement
-# Return "positive" if number > 0, "negative" if < 0, "zero" if == 0
-# Expected: check_number(5) => "positive"
+# Упражнение 1: Конструкция if-else
+# Верните "positive" если число > 0, "negative" если < 0, "zero" если == 0
+# Ожидается: check_number(5) => "positive"
 def check_number(num)
-  # TODO: Use if/elsif/else statement
+  # TODO: Используйте конструкцию if/elsif/else
   nil
 end
 
-# Exercise 2: Ternary operator
-# Use ternary operator to return "even" or "odd"
-# Expected: even_or_odd(4) => "even"
+# Упражнение 2: Тернарный оператор
+# Используйте тернарный оператор для возврата "even" или "odd"
+# Ожидается: even_or_odd(4) => "even"
 def even_or_odd(num)
-  # TODO: Use condition ? true_value : false_value
+  # TODO: Используйте condition ? true_value : false_value
   nil
 end
 
-# Exercise 3: Unless statement (Ruby-specific)
-# Return "access granted" unless age is less than 18
-# Expected: check_access(20) => "access granted"
-# Expected: check_access(15) => "access denied"
+# Упражнение 3: Конструкция unless (специфична для Ruby)
+# Верните "access granted" если возраст не меньше 18
+# Ожидается: check_access(20) => "access granted"
+# Ожидается: check_access(15) => "access denied"
 def check_access(age)
-  # TODO: Use unless statement (opposite of if)
+  # TODO: Используйте конструкцию unless (противоположность if)
   nil
 end
 
-# Exercise 4: Case statement (switch)
-# Return the day type: "weekday" for Mon-Fri, "weekend" for Sat-Sun, "invalid" otherwise
-# Expected: day_type("Monday") => "weekday"
+# Упражнение 4: Конструкция case (switch)
+# Верните тип дня: "weekday" для пн-пт, "weekend" для сб-вс, "invalid" в остальных случаях
+# Ожидается: day_type("Monday") => "weekday"
 def day_type(day)
-  # TODO: Use case/when statement
+  # TODO: Используйте конструкцию case/when
   nil
 end
 
-# Exercise 5: While loop
-# Return an array of numbers from 1 to n
-# Expected: count_up(5) => [1, 2, 3, 4, 5]
+# Упражнение 5: Цикл while
+# Верните массив чисел от 1 до n
+# Ожидается: count_up(5) => [1, 2, 3, 4, 5]
 def count_up(n)
-  # TODO: Use while loop
+  # TODO: Используйте цикл while
+  nil
 end
 
-# Exercise 6: Until loop (Ruby-specific)
-# Return an array counting down from n to 1
-# Expected: count_down(5) => [5, 4, 3, 2, 1]
+# Упражнение 6: Цикл until (специфичен для Ruby)
+# Верните массив, считающий от n до 1
+# Ожидается: count_down(5) => [5, 4, 3, 2, 1]
 def count_down(n)
-  # TODO: Use until loop (opposite of while)
+  # TODO: Используйте цикл until (противоположность while)
   nil
 end
 
-# Exercise 7: For loop / each iterator
-# Sum all numbers in an array
-# Expected: sum_with_loop([1, 2, 3, 4]) => 10
+# Упражнение 7: Цикл for / итератор each
+# Просуммируйте все числа в массиве
+# Ожидается: sum_with_loop([1, 2, 3, 4]) => 10
 def sum_with_loop(arr)
-  # TODO: Use for loop
+  # TODO: Используйте цикл for
   nil
 end
 
-# Exercise 8: Break and next
-# Return an array of numbers from array that are < 10, stop at first number >= 20
-# Expected: process_numbers([5, 8, 12, 25, 3, 15]) => [5, 8]
+# Упражнение 8: Break и next
+# Верните массив чисел из массива, которые < 10, остановитесь при первом числе >= 20
+# Ожидается: process_numbers([5, 8, 12, 25, 3, 15]) => [5, 8]
 def process_numbers(arr)
-  # TODO: Use break to stop, next to skip
+  # TODO: Используйте break для остановки, next для пропуска
   nil
 end
 
-# Exercise 9: Modifier if/unless
-# Return "big" if number > 100, otherwise return the number itself
-# Use if as a statement modifier (at the end of line)
-# Expected: check_size(150) => "big"
-# Expected: check_size(50) => 50
+# Упражнение 9: Модификатор if/unless
+# Верните "big" если число > 100, иначе верните само число
+# Используйте if как модификатор выражения (в конце строки)
+# Ожидается: check_size(150) => "big"
+# Ожидается: check_size(50) => 50
 def check_size(num)
-  # TODO: Use: return "big" if num > 100; return num
+  # TODO: Используйте: return "big" if num > 100; return num
   nil
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
@@ -170,14 +171,14 @@ def run_tests
 
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Outstanding! You've mastered Ruby control flow!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Превосходно! Вы освоили управление потоком выполнения в Ruby!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

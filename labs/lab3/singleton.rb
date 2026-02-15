@@ -1,53 +1,53 @@
 # ============================================
-# LAB 3: Singleton Pattern
+# Лабораторная работа 3: Паттерн Singleton (Одиночка)
 # ============================================
-# The Singleton pattern ensures that a class has only one instance
-# and provides a global point of access to it.
-# Run this file with: ruby singleton.rb
+# Паттерн Singleton гарантирует, что у класса есть только один экземпляр
+# и предоставляет глобальную точку доступа к нему.
+# Запустите этот файл командой: ruby singleton.rb
 
-# Exercise 1: Implement a basic Singleton
-# Create a Logger class that can only have one instance
-# Hint: Use class variables and private constructor
+# Упражнение 1: Реализуйте базовый Singleton
+# Создайте класс Logger, который может иметь только один экземпляр
+# Подсказка: Используйте переменные класса и приватный конструктор
 
 class Logger
-  # TODO: Make the constructor private using private_class_method
-  # TODO: Create a class variable @@instance
-  # TODO: Implement self.instance method that returns the single instance
-  
+  # TODO: Сделайте конструктор приватным, используя private_class_method
+  # TODO: Создайте переменную класса @@instance
+  # TODO: Реализуйте метод self.instance, который возвращает единственный экземпляр
+
   def initialize
     @logs = []
   end
-  
+
   def log(message)
     @logs << "[#{Time.now}] #{message}"
   end
-  
+
   def show_logs
     @logs
   end
-  
+
   def clear_logs
     @logs.clear
   end
 end
 
-# Exercise 2: Implement Singleton using Ruby's Singleton module
-# Create a Configuration class using Ruby's built-in Singleton module
-# Hint: require 'singleton' and include Singleton
+# Упражнение 2: Реализуйте Singleton, используя модуль Singleton в Ruby
+# Создайте класс Configuration, используя встроенный модуль Singleton в Ruby
+# Подсказка: require 'singleton' и include Singleton
 
 require 'singleton'
 
 class Configuration
-  # TODO: Include the Singleton module
-  
+  # TODO: Подключите модуль Singleton
+
   attr_accessor :app_name, :version, :debug_mode
-  
+
   def initialize
     @app_name = "MyApp"
     @version = "1.0.0"
     @debug_mode = false
   end
-  
+
   def settings
     {
       app_name: @app_name,
@@ -57,50 +57,50 @@ class Configuration
   end
 end
 
-# Exercise 3: Implement a Database Connection Pool Singleton
-# Create a DatabaseConnection class that manages a single connection
+# Упражнение 3: Реализуйте Singleton для пула соединений с базой данных
+# Создайте класс DatabaseConnection, который управляет единственным соединением
 
 class DatabaseConnection
-  # TODO: Implement Singleton pattern (manually or with module)
-  # TODO: Add a @connected attribute to track connection state
-  
+  # TODO: Реализуйте паттерн Singleton (вручную или с помощью модуля)
+  # TODO: Добавьте атрибут @connected для отслеживания состояния соединения
+
   def initialize
     @connected = false
     @connection_string = nil
   end
-  
+
   def connect(connection_string)
-    # TODO: Set @connected to true and save connection_string
-    # TODO: Return "Connected to #{connection_string}"
+    # TODO: Установите @connected в true и сохраните connection_string
+    # TODO: Верните "Connected to #{connection_string}"
     nil
   end
-  
+
   def disconnect
-    # TODO: Set @connected to false
-    # TODO: Return "Disconnected"
+    # TODO: Установите @connected в false
+    # TODO: Верните "Disconnected"
     nil
   end
-  
+
   def connected?
     @connected
   end
-  
+
   def execute_query(query)
-    # TODO: Return "Executing: #{query}" if connected
-    # TODO: Return "Not connected to database" if not connected
+    # TODO: Верните "Executing: #{query}" если подключено
+    # TODO: Верните "Not connected to database" если не подключено
     nil
   end
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
   tests_passed = 0
   total_tests = 0
-  
-  puts "Testing Singleton Pattern..."
+
+  puts "Тестирование паттерна Singleton..."
   puts "=" * 40
   
   # Test 1: Logger Singleton - same instance
@@ -229,14 +229,14 @@ def run_tests
   
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Excellent! You understand the Singleton pattern!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Превосходно! Вы поняли паттерн Singleton!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

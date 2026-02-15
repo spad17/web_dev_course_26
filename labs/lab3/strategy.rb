@@ -1,17 +1,17 @@
 # ============================================
-# LAB 3: Strategy Pattern
+# Лабораторная работа 3: Паттерн Strategy (Стратегия)
 # ============================================
-# The Strategy pattern defines a family of algorithms, encapsulates each one,
-# and makes them interchangeable. Strategy lets the algorithm vary independently
-# from clients that use it.
-# Run this file with: ruby strategy.rb
+# Паттерн Strategy определяет семейство алгоритмов, инкапсулирует каждый из них
+# и делает их взаимозаменяемыми. Strategy позволяет алгоритму изменяться независимо
+# от клиентов, которые его используют.
+# Запустите этот файл командой: ruby strategy.rb
 
-# Exercise 1: Payment Strategy
-# Implement different payment methods that can be used interchangeably
+# Упражнение 1: Стратегия оплаты
+# Реализуйте различные методы оплаты, которые можно использовать взаимозаменяемо
 
 class PaymentStrategy
   def pay(amount)
-    raise NotImplementedError, "Subclasses must implement pay method"
+    raise NotImplementedError, "Подклассы должны реализовать метод pay"
   end
 end
 
@@ -19,15 +19,15 @@ class CreditCardPayment < PaymentStrategy
   def initialize(card_number)
     @card_number = card_number
   end
-  
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
+
+  # TODO: Реализуйте метод pay
+  # Верните "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
   def pay(amount)
     nil
   end
-  
+
   private
-  
+
   def last_4_digits
     @card_number[-4..-1]
   end
@@ -37,9 +37,9 @@ class PayPalPayment < PaymentStrategy
   def initialize(email)
     @email = email
   end
-  
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using PayPal account #{email}"
+
+  # TODO: Реализуйте метод pay
+  # Верните "Paid $#{amount} using PayPal account #{@email}"
   def pay(amount)
     nil
   end
@@ -49,9 +49,9 @@ class CryptoPayment < PaymentStrategy
   def initialize(wallet_address)
     @wallet_address = wallet_address
   end
-  
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using Crypto wallet #{wallet_address}"
+
+  # TODO: Реализуйте метод pay
+  # Верните "Paid $#{amount} using Crypto wallet #{@wallet_address}"
   def pay(amount)
     nil
   end
@@ -62,30 +62,30 @@ class ShoppingCart
     @items = []
     @payment_strategy = nil
   end
-  
+
   def add_item(name, price)
     @items << { name: name, price: price }
   end
-  
-  # TODO: Implement set_payment_strategy method
+
+  # TODO: Реализуйте метод set_payment_strategy
   def set_payment_strategy(strategy)
     nil
   end
-  
+
   def total
     @items.sum { |item| item[:price] }
   end
-  
-  # TODO: Implement checkout method
-  # Use the payment strategy to process payment
-  # Return the result from payment strategy's pay method
+
+  # TODO: Реализуйте метод checkout
+  # Используйте стратегию оплаты для обработки платежа
+  # Верните результат из метода pay стратегии оплаты
   def checkout
     nil
   end
 end
 
-# Exercise 2: Sorting Strategy
-# Implement different sorting algorithms as strategies
+# Упражнение 2: Стратегия сортировки
+# Реализуйте различные алгоритмы сортировки как стратегии
 
 module SortStrategy
   def sort(array)
@@ -95,9 +95,9 @@ end
 
 class BubbleSort
   include SortStrategy
-  
-  # TODO: Implement bubble sort
-  # Return sorted array (ascending order)
+
+  # TODO: Реализуйте пузырьковую сортировку
+  # Верните отсортированный массив (по возрастанию)
   def sort(array)
     nil
   end
@@ -105,9 +105,9 @@ end
 
 class QuickSort
   include SortStrategy
-  
-  # TODO: Implement quick sort or use Ruby's built-in sort
-  # Return sorted array (ascending order)
+
+  # TODO: Реализуйте быструю сортировку или используйте встроенную sort в Ruby
+  # Верните отсортированный массив (по возрастанию)
   def sort(array)
     nil
   end
@@ -115,9 +115,9 @@ end
 
 class ReverseSort
   include SortStrategy
-  
-  # TODO: Implement reverse sort
-  # Return sorted array (descending order)
+
+  # TODO: Реализуйте обратную сортировку
+  # Верните отсортированный массив (по убыванию)
   def sort(array)
     nil
   end
@@ -127,21 +127,21 @@ class DataProcessor
   def initialize(sort_strategy)
     @sort_strategy = sort_strategy
   end
-  
-  # TODO: Implement set_strategy method
+
+  # TODO: Реализуйте метод set_strategy
   def set_strategy(strategy)
     nil
   end
-  
-  # TODO: Implement process method
-  # Use the sort strategy to sort the data
+
+  # TODO: Реализуйте метод process
+  # Используйте стратегию сортировки для сортировки данных
   def process(data)
     nil
   end
 end
 
-# Exercise 3: Compression Strategy
-# Implement different compression algorithms
+# Упражнение 3: Стратегия сжатия
+# Реализуйте различные алгоритмы сжатия
 
 class CompressionStrategy
   def compress(data)
@@ -150,24 +150,24 @@ class CompressionStrategy
 end
 
 class ZipCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "ZIP compressed: #{data}"
+  # TODO: Реализуйте метод compress
+  # Верните "ZIP compressed: #{data}"
   def compress(data)
     nil
   end
 end
 
 class RarCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "RAR compressed: #{data}"
+  # TODO: Реализуйте метод compress
+  # Верните "RAR compressed: #{data}"
   def compress(data)
     nil
   end
 end
 
 class NoCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "Not compressed: #{data}"
+  # TODO: Реализуйте метод compress
+  # Верните "Not compressed: #{data}"
   def compress(data)
     nil
   end
@@ -175,32 +175,32 @@ end
 
 class FileHandler
   attr_reader :compression_strategy
-  
+
   def initialize(compression_strategy = NoCompression.new)
     @compression_strategy = compression_strategy
   end
-  
-  # TODO: Implement set_compression method
+
+  # TODO: Реализуйте метод set_compression
   def set_compression(strategy)
     nil
   end
-  
-  # TODO: Implement save_file method
-  # Compress data using the strategy and return result
+
+  # TODO: Реализуйте метод save_file
+  # Сожмите данные, используя стратегию, и верните результат
   def save_file(data)
     nil
   end
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
   tests_passed = 0
   total_tests = 0
-  
-  puts "Testing Strategy Pattern..."
+
+  puts "Тестирование паттерна Strategy..."
   puts "=" * 40
   
   # Test 1: Credit Card Payment
@@ -374,14 +374,14 @@ def run_tests
   
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Fantastic! You've mastered the Strategy pattern!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Фантастика! Вы освоили паттерн Strategy!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

@@ -1,77 +1,77 @@
 # ============================================
-# LAB 1: Hash Operations in Ruby
+# Лабораторная работа 1: Операции с хэшами в Ruby
 # ============================================
-# Complete the following exercises to learn Ruby hash manipulation.
-# Hashes are key-value pairs (like dictionaries in Python or objects in JS).
-# Replace the 'nil' return values with your implementation.
-# Run this file with: ruby hashes.rb
+# Выполните следующие упражнения, чтобы изучить работу с хэшами в Ruby.
+# Хэши - это пары ключ-значение (как словари в Python или объекты в JS).
+# Замените возвращаемые значения 'nil' своей реализацией.
+# Запустите этот файл командой: ruby c4_hashes.rb
 
-# Exercise 1: Hash creation and access
-# Create a hash with given keys and values, then return the value for a specific key
-# Expected: get_value({ name: "Alice", age: 25 }, :name) => "Alice"
+# Упражнение 1: Создание хэша и доступ к элементам
+# Создайте хэш с заданными ключами и значениями, затем верните значение для конкретного ключа
+# Ожидается: get_value({ name: "Alice", age: 25 }, :name) => "Alice"
 def get_value(hash, key)
-  # TODO: Access hash value using hash[key]
+  # TODO: Получите значение из хэша, используя hash[key]
   nil
 end
 
-# Exercise 2: Hash modification
-# Add a new key-value pair to a hash and return it
-# Expected: add_pair({ a: 1 }, :b, 2) => { a: 1, b: 2 }
+# Упражнение 2: Изменение хэша
+# Добавьте новую пару ключ-значение в хэш и верните его
+# Ожидается: add_pair({ a: 1 }, :b, 2) => { a: 1, b: 2 }
 def add_pair(hash, key, value)
-  # TODO: Add new pair using hash[key] = value
+  # TODO: Добавьте новую пару, используя hash[key] = value
   nil
 end
 
-# Exercise 3: Hash keys and values
-# Return an array of all keys from a hash
-# Expected: get_keys({ name: "Bob", age: 30, city: "NYC" }) => [:name, :age, :city]
+# Упражнение 3: Ключи и значения хэша
+# Верните массив всех ключей из хэша
+# Ожидается: get_keys({ name: "Bob", age: 30, city: "NYC" }) => [:name, :age, :city]
 def get_keys(hash)
-  # TODO: Use .keys method
+  # TODO: Используйте метод .keys
   nil
 end
 
-# Exercise 4: Hash iteration
-# Create a new hash with all values doubled
-# Expected: double_values({ a: 1, b: 2, c: 3 }) => { a: 2, b: 4, c: 6 }
+# Упражнение 4: Итерация по хэшу
+# Создайте новый хэш со всеми значениями, умноженными на 2
+# Ожидается: double_values({ a: 1, b: 2, c: 3 }) => { a: 2, b: 4, c: 6 }
 def double_values(hash)
-  # TODO: Use .transform_values or .each_with_object
+  # TODO: Используйте .transform_values или .each_with_object
   nil
 end
 
-# Exercise 5: Hash filtering
-# Return a new hash with only pairs where value is greater than threshold
-# Expected: filter_by_value({ a: 10, b: 5, c: 15 }, 8) => { a: 10, c: 15 }
+# Упражнение 5: Фильтрация хэша
+# Верните новый хэш только с теми парами, где значение больше порога
+# Ожидается: filter_by_value({ a: 10, b: 5, c: 15 }, 8) => { a: 10, c: 15 }
 def filter_by_value(hash, threshold)
-  # TODO: Use .select method
+  # TODO: Используйте метод .select
   nil
 end
 
-# Exercise 6: Hash merging
-# Merge two hashes (second hash values overwrite first)
-# Expected: merge_hashes({ a: 1, b: 2 }, { b: 3, c: 4 }) => { a: 1, b: 3, c: 4 }
+# Упражнение 6: Объединение хэшей
+# Объедините два хэша (значения второго хэша перезаписывают первый)
+# Ожидается: merge_hashes({ a: 1, b: 2 }, { b: 3, c: 4 }) => { a: 1, b: 3, c: 4 }
 def merge_hashes(hash1, hash2)
-  # TODO: Use .merge method
+  # TODO: Используйте метод .merge
   nil
 end
 
-# Exercise 7: Hash existence check
-# Check if a hash has a specific key
-# Expected: has_key?({ name: "Alice", age: 25 }, :name) => true
+# Упражнение 7: Проверка существования ключа
+# Проверьте, есть ли в хэше конкретный ключ
+# Ожидается: has_key?({ name: "Alice", age: 25 }, :name) => true
 def has_key?(hash, key)
-  # TODO: Use .has_key? or .key? method
+  # TODO: Используйте метод .has_key? или .key?
   nil
 end
 
-# Exercise 8: Working with nested hashes
-# Access a value from a nested hash
-# Expected: nested_value({ user: { name: "John", age: 30 } }, :user, :name) => "John"
+# Упражнение 8: Работа с вложенными хэшами
+# Получите значение из вложенного хэша
+# Ожидается: nested_value({ user: { name: "John", age: 30 } }, :user, :name) => "John"
 def nested_value(hash, key1, key2)
-  # TODO: Access nested hash using hash[key1][key2] or .dig method
+  # TODO: Получите значение из вложенного хэша, используя hash[key1][key2] или метод .dig
   nil
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
@@ -153,14 +153,14 @@ def run_tests
 
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Fantastic! You've mastered Ruby hashes!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Фантастика! Вы освоили хэши в Ruby!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

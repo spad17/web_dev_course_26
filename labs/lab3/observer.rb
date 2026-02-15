@@ -1,53 +1,53 @@
 # ============================================
-# LAB 3: Observer Pattern
+# Лабораторная работа 3: Паттерн Observer (Наблюдатель)
 # ============================================
-# The Observer pattern defines a one-to-many dependency between objects
-# so that when one object changes state, all its dependents are notified.
-# Run this file with: ruby observer.rb
+# Паттерн Observer определяет зависимость "один ко многим" между объектами,
+# чтобы при изменении состояния одного объекта все зависимые объекты уведомлялись.
+# Запустите этот файл командой: ruby observer.rb
 
-# Exercise 1: Implement a Weather Station with Observers
-# The WeatherStation is the subject, and displays are observers
+# Упражнение 1: Реализуйте Метеостанцию с Наблюдателями
+# WeatherStation - это субъект, а дисплеи - наблюдатели
 
 class WeatherStation
-  # TODO: Initialize with an empty array of observers
-  # TODO: Add temperature, humidity, and pressure attributes
-  
+  # TODO: Инициализируйте с пустым массивом наблюдателей
+  # TODO: Добавьте атрибуты temperature, humidity и pressure
+
   def initialize
     @observers = []
     @temperature = 0
     @humidity = 0
     @pressure = 0
   end
-  
-  # TODO: Implement attach method to add an observer
+
+  # TODO: Реализуйте метод attach для добавления наблюдателя
   def attach(observer)
     nil
   end
-  
-  # TODO: Implement detach method to remove an observer
+
+  # TODO: Реализуйте метод detach для удаления наблюдателя
   def detach(observer)
     nil
   end
-  
-  # TODO: Implement notify method to call update on all observers
+
+  # TODO: Реализуйте метод notify для вызова update у всех наблюдателей
   def notify
     nil
   end
-  
+
   def set_measurements(temperature, humidity, pressure)
     @temperature = temperature
     @humidity = humidity
     @pressure = pressure
     notify
   end
-  
+
   attr_reader :temperature, :humidity, :pressure
 end
 
 class CurrentConditionsDisplay
-  # TODO: Implement update method
-  # Return "Current conditions: #{temperature}°C, #{humidity}% humidity"
-  
+  # TODO: Реализуйте метод update
+  # Используйте значения из weather_station и верните
+  # "Current conditions: #{weather_station.temperature}°C, #{weather_station.humidity}% humidity"
   def update(weather_station)
     nil
   end
@@ -57,47 +57,47 @@ class StatisticsDisplay
   def initialize
     @temperatures = []
   end
-  
-  # TODO: Implement update method
-  # Store temperature and return average
-  # Return "Avg temperature: #{average}°C"
-  
+
+  # TODO: Реализуйте метод update
+  # Сохраните температуру и верните среднее значение
+  # Верните "Avg temperature: #{average}°C"
+
   def update(weather_station)
     nil
   end
 end
 
-# Exercise 2: Implement a Stock Market Observer
-# Stock is the subject, investors are observers
+# Упражнение 2: Реализуйте Наблюдателя за Фондовым рынком
+# Stock - это субъект, инвесторы - наблюдатели
 
 class Stock
   attr_reader :symbol, :price
-  
+
   def initialize(symbol, initial_price)
     @symbol = symbol
     @price = initial_price
-    # TODO: Initialize observers array
+    # TODO: Инициализируйте массив наблюдателей
     @observers = []
   end
-  
-  # TODO: Implement subscribe method to add observer
+
+  # TODO: Реализуйте метод subscribe для добавления наблюдателя
   def subscribe(observer)
     nil
   end
-  
-  # TODO: Implement unsubscribe method to remove observer
+
+  # TODO: Реализуйте метод unsubscribe для удаления наблюдателя
   def unsubscribe(observer)
     nil
   end
-  
+
   def update_price(new_price)
     old_price = @price
     @price = new_price
-    # TODO: Notify all observers with old_price and new_price
+    # TODO: Уведомите всех наблюдателей с old_price и new_price
     nil
   end
-  
-  # TODO: Implement notify_observers method
+
+  # TODO: Реализуйте метод notify_observers
   def notify_observers(old_price, new_price)
     nil
   end
@@ -105,85 +105,85 @@ end
 
 class Investor
   attr_reader :name, :notifications
-  
+
   def initialize(name)
     @name = name
     @notifications = []
   end
-  
-  # TODO: Implement on_price_change method
-  # Store notification: "#{stock.symbol}: #{old_price} -> #{new_price}"
-  # Return the notification string
-  
+
+  # TODO: Реализуйте метод on_price_change
+  # Сохраните уведомление: "#{stock.symbol}: #{old_price} -> #{new_price}"
+  # Верните строку уведомления
+
   def on_price_change(stock, old_price, new_price)
     nil
   end
 end
 
-# Exercise 3: Implement Event System using Ruby's Observable module
-# Note: Ruby's Observable is deprecated, so we'll implement a simple version
+# Упражнение 3: Реализуйте Систему событий, используя модуль Observable в Ruby
+# Примечание: Observable в Ruby устарел, поэтому реализуем простую версию
 
 module Observable
-  # TODO: Implement this module to add observer functionality
-  # Methods needed: add_observer, delete_observer, notify_observers
-  
+  # TODO: Реализуйте этот модуль для добавления функциональности наблюдателя
+  # Необходимые методы: add_observer, delete_observer, notify_observers
+
   def add_observer(observer)
     @observers ||= []
-    # TODO: Add observer to array if not already present
+    # TODO: Добавьте наблюдателя в массив, если его там ещё нет
     nil
   end
-  
+
   def delete_observer(observer)
     @observers ||= []
-    # TODO: Remove observer from array
+    # TODO: Удалите наблюдателя из массива
     nil
   end
-  
+
   def notify_observers(data = nil)
     @observers ||= []
-    # TODO: Call update method on each observer with self and data
+    # TODO: Вызовите метод update у каждого наблюдателя с self и data
     nil
   end
 end
 
 class NewsAgency
   include Observable
-  
+
   attr_reader :latest_news
-  
+
   def publish_news(news)
     @latest_news = news
-    # TODO: Notify all observers with the news
+    # TODO: Уведомите всех наблюдателей о новости
     nil
   end
 end
 
 class NewsSubscriber
   attr_reader :name, :received_news
-  
+
   def initialize(name)
     @name = name
     @received_news = []
   end
-  
-  # TODO: Implement update method
-  # Store news in received_news array
-  # news_agency is the first parameter, news is the second
-  
+
+  # TODO: Реализуйте метод update
+  # Сохраните новость в массиве received_news
+  # news_agency - первый параметр, news - второй
+
   def update(news_agency, news)
     nil
   end
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
   tests_passed = 0
   total_tests = 0
-  
-  puts "Testing Observer Pattern..."
+
+  puts "Тестирование паттерна Observer..."
   puts "=" * 40
   
   # Test 1: WeatherStation with CurrentConditionsDisplay
@@ -346,14 +346,14 @@ def run_tests
   
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Excellent! You've mastered the Observer pattern!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Превосходно! Вы освоили паттерн Observer!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

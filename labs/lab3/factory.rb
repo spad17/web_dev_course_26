@@ -1,12 +1,12 @@
 # ============================================
-# LAB 3: Factory Pattern
+# Лабораторная работа 3: Паттерн Factory (Фабрика)
 # ============================================
-# The Factory pattern provides an interface for creating objects
-# without specifying their exact classes.
-# Run this file with: ruby factory.rb
+# Паттерн Factory предоставляет интерфейс для создания объектов
+# без указания их конкретных классов.
+# Запустите этот файл командой: ruby factory.rb
 
-# Exercise 1: Simple Factory for creating different types of vehicles
-# Implement a VehicleFactory that creates Cars, Motorcycles, and Trucks
+# Упражнение 1: Простая фабрика для создания различных типов транспорта
+# Реализуйте VehicleFactory, которая создаёт Cars, Motorcycles и Trucks
 
 class Vehicle
   attr_reader :type, :wheels, :capacity
@@ -24,84 +24,84 @@ end
 
 class Car < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Car: 4 wheels, 5 passengers
+    # TODO: Вызовите super с соответствующими значениями
+    # Car: 4 колеса, 5 пассажиров
     nil
   end
 end
 
 class Motorcycle < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Motorcycle: 2 wheels, 2 passengers
+    # TODO: Вызовите super с соответствующими значениями
+    # Motorcycle: 2 колеса, 2 пассажира
     nil
   end
 end
 
 class Truck < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Truck: 6 wheels, 3 passengers
+    # TODO: Вызовите super с соответствующими значениями
+    # Truck: 6 колёс, 3 пассажира
     nil
   end
 end
 
 class VehicleFactory
-  # TODO: Implement create_vehicle method
-  # It should take a symbol (:car, :motorcycle, or :truck)
-  # and return an instance of the appropriate class
-  # Return nil for unknown types
-  
+  # TODO: Реализуйте метод create_vehicle
+  # Он должен принимать символ (:car, :motorcycle, или :truck)
+  # и возвращать экземпляр соответствующего класса
+  # Верните nil для неизвестных типов
+
   def self.create_vehicle(type)
     nil
   end
 end
 
-# Exercise 2: Factory Method Pattern
-# Create different types of notifications (Email, SMS, Push)
+# Упражнение 2: Паттерн Factory Method (Фабричный метод)
+# Создайте различные типы уведомлений (Email, SMS, Push)
 
 class Notification
   def send(message)
-    raise NotImplementedError, "Subclasses must implement send method"
+    raise NotImplementedError, "Подклассы должны реализовать метод send"
   end
 end
 
 class EmailNotification < Notification
-  # TODO: Implement send method
-  # Return "Email sent: #{message}"
+  # TODO: Реализуйте метод send
+  # Верните "Email sent: #{message}"
   def send(message)
     nil
   end
 end
 
 class SMSNotification < Notification
-  # TODO: Implement send method
-  # Return "SMS sent: #{message}"
+  # TODO: Реализуйте метод send
+  # Верните "SMS sent: #{message}"
   def send(message)
     nil
   end
 end
 
 class PushNotification < Notification
-  # TODO: Implement send method
-  # Return "Push notification sent: #{message}"
+  # TODO: Реализуйте метод send
+  # Верните "Push notification sent: #{message}"
   def send(message)
     nil
   end
 end
 
 class NotificationFactory
-  # TODO: Create a factory method that returns appropriate notification
-  # Input: type (:email, :sms, :push)
-  # Output: instance of appropriate notification class
-  
+  # TODO: Создайте фабричный метод, который возвращает соответствующее уведомление
+  # Вход: type (:email, :sms, :push)
+  # Выход: экземпляр соответствующего класса уведомления
+
   def self.create(type)
     nil
   end
 end
 
-# Exercise 3: Abstract Factory Pattern
-# Create UI elements for different themes (Light and Dark)
+# Упражнение 3: Паттерн Abstract Factory (Абстрактная фабрика)
+# Создайте элементы UI для различных тем (Светлая и Тёмная)
 
 module UIElement
   def render
@@ -111,9 +111,9 @@ end
 
 class LightButton
   include UIElement
-  
-  # TODO: Implement render method
-  # Return "Rendering light button"
+
+  # TODO: Реализуйте метод render
+  # Верните "Rendering light button"
   def render
     nil
   end
@@ -121,9 +121,9 @@ end
 
 class DarkButton
   include UIElement
-  
-  # TODO: Implement render method
-  # Return "Rendering dark button"
+
+  # TODO: Реализуйте метод render
+  # Верните "Rendering dark button"
   def render
     nil
   end
@@ -131,9 +131,9 @@ end
 
 class LightTextField
   include UIElement
-  
-  # TODO: Implement render method
-  # Return "Rendering light text field"
+
+  # TODO: Реализуйте метод render
+  # Верните "Rendering light text field"
   def render
     nil
   end
@@ -141,9 +141,9 @@ end
 
 class DarkTextField
   include UIElement
-  
-  # TODO: Implement render method
-  # Return "Rendering dark text field"
+
+  # TODO: Реализуйте метод render
+  # Верните "Rendering dark text field"
   def render
     nil
   end
@@ -153,47 +153,47 @@ class ThemeFactory
   def create_button
     raise NotImplementedError
   end
-  
+
   def create_text_field
     raise NotImplementedError
   end
 end
 
 class LightThemeFactory < ThemeFactory
-  # TODO: Implement create_button to return LightButton
-  # TODO: Implement create_text_field to return LightTextField
-  
+  # TODO: Реализуйте create_button для возврата LightButton
+  # TODO: Реализуйте create_text_field для возврата LightTextField
+
   def create_button
     nil
   end
-  
+
   def create_text_field
     nil
   end
 end
 
 class DarkThemeFactory < ThemeFactory
-  # TODO: Implement create_button to return DarkButton
-  # TODO: Implement create_text_field to return DarkTextField
-  
+  # TODO: Реализуйте create_button для возврата DarkButton
+  # TODO: Реализуйте create_text_field для возврата DarkTextField
+
   def create_button
     nil
   end
-  
+
   def create_text_field
     nil
   end
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
   tests_passed = 0
   total_tests = 0
-  
-  puts "Testing Factory Pattern..."
+
+  puts "Тестирование паттерна Factory..."
   puts "=" * 40
   
   # Test 1: VehicleFactory creates Car
@@ -321,14 +321,14 @@ def run_tests
   
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Great! You've mastered the Factory pattern!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Отлично! Вы освоили паттерн Factory!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

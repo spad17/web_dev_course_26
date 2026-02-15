@@ -1,76 +1,76 @@
 # ============================================
-# LAB 1: Array Operations in Ruby
+# Лабораторная работа 1: Операции с массивами в Ruby
 # ============================================
-# Complete the following exercises to learn Ruby array manipulation.
-# Replace the 'nil' return values with your implementation.
-# Run this file with: ruby arrays.rb
+# Выполните следующие упражнения, чтобы изучить работу с массивами в Ruby.
+# Замените возвращаемые значения 'nil' своей реализацией.
+# Запустите этот файл командой: ruby c2_arrays.rb
 
-# Exercise 1: Array creation and access
-# Return the first and last elements of an array
-# Expected: first_and_last([1, 2, 3, 4]) => [1, 4]
+# Упражнение 1: Создание массива и доступ к элементам
+# Верните первый и последний элементы массива
+# Ожидается: first_and_last([1, 2, 3, 4]) => [1, 4]
 def first_and_last(arr)
-  # TODO: Use array indexing with [0] and [-1]
+  # TODO: Используйте индексацию массива с [0] и [-1]
   nil
 end
 
-# Exercise 2: Array methods
-# Add an element to the end of an array and return the modified array
-# Expected: add_element([1, 2, 3], 4) => [1, 2, 3, 4]
+# Упражнение 2: Методы массивов
+# Добавьте элемент в конец массива и верните изменённый массив
+# Ожидается: add_element([1, 2, 3], 4) => [1, 2, 3, 4]
 def add_element(arr, element)
-  # TODO: Use .push or << operator (modify and return the array)
+  # TODO: Используйте .push или оператор << (измените и верните массив)
   nil
 end
 
-# Exercise 3: Array iteration
-# Return an array with all numbers doubled
-# Expected: double_numbers([1, 2, 3]) => [2, 4, 6]
+# Упражнение 3: Итерация по массиву
+# Верните массив со всеми числами, умноженными на 2
+# Ожидается: double_numbers([1, 2, 3]) => [2, 4, 6]
 def double_numbers(arr)
-  # TODO: Use .map method
+  # TODO: Используйте метод .map
   nil
 end
 
-# Exercise 4: Array filtering
-# Return only even numbers from an array
-# Expected: even_numbers([1, 2, 3, 4, 5, 6]) => [2, 4, 6]
+# Упражнение 4: Фильтрация массива
+# Верните только чётные числа из массива
+# Ожидается: even_numbers([1, 2, 3, 4, 5, 6]) => [2, 4, 6]
 def even_numbers(arr)
-  # TODO: Use .select or .filter method
+  # TODO: Используйте метод .select или .filter
   nil
 end
 
-# Exercise 5: Array reduction
-# Calculate the sum of all numbers in an array
-# Expected: sum_array([1, 2, 3, 4]) => 10
+# Упражнение 5: Свёртка массива
+# Вычислите сумму всех чисел в массиве
+# Ожидается: sum_array([1, 2, 3, 4]) => 10
 def sum_array(arr)
-  # TODO: Use .sum or .reduce method
+  # TODO: Используйте метод .sum или .reduce
   nil
 end
 
-# Exercise 6: Array operations
-# Check if an array contains a specific element
-# Expected: contains?([:a, :b, :c], :b) => true
+# Упражнение 6: Операции с массивами
+# Проверьте, содержит ли массив конкретный элемент
+# Ожидается: contains?([:a, :b, :c], :b) => true
 def contains?(arr, element)
-  # TODO: Use .include? method
+  # TODO: Используйте метод .include?
   nil
 end
 
-# Exercise 7: Array sorting
-# Sort an array of numbers in descending order
-# Expected: sort_desc([3, 1, 4, 1, 5]) => [5, 4, 3, 1, 1]
+# Упражнение 7: Сортировка массива
+# Отсортируйте массив чисел в порядке убывания
+# Ожидается: sort_desc([3, 1, 4, 1, 5]) => [5, 4, 3, 1, 1]
 def sort_desc(arr)
-  # TODO: Use .sort with .reverse or .sort_by
+  # TODO: Используйте .sort с .reverse или .sort_by
   nil
 end
 
-# Exercise 8: Array range
-# Create an array of numbers from start to end (inclusive)
-# Expected: number_range(1, 5) => [1, 2, 3, 4, 5]
+# Упражнение 8: Диапазон массива
+# Создайте массив чисел от start до end (включительно)
+# Ожидается: number_range(1, 5) => [1, 2, 3, 4, 5]
 def number_range(start, finish)
-  # TODO: Use (start..finish).to_a
+  # TODO: Используйте (start..finish).to_a
   nil
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
@@ -152,14 +152,14 @@ def run_tests
 
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Excellent! You've mastered Ruby arrays!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Превосходно! Вы освоили массивы в Ruby!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests

@@ -1,61 +1,61 @@
 # ============================================
-# LAB 1: String Operations in Ruby
+# Лабораторная работа 1: Операции со строками в Ruby
 # ============================================
-# Complete the following exercises to learn Ruby string manipulation.
-# Replace the 'nil' return values with your implementation.
-# Run this file with: ruby strings.rb
+# Выполните следующие упражнения, чтобы изучить работу со строками в Ruby.
+# Замените возвращаемые значения 'nil' своей реализацией.
+# Запустите этот файл командой: ruby c3_strings.rb
 
-# Exercise 1: String concatenation
-# Concatenate first_name and last_name with a space in between
-# Expected: "John" + "Doe" => "John Doe"
+# Упражнение 1: Конкатенация строк
+# Объедините first_name и last_name с пробелом между ними
+# Ожидается: "John" + "Doe" => "John Doe"
 def full_name(first_name, last_name)
-  # TODO: Implement using string concatenation or interpolation
+  # TODO: Реализуйте с помощью конкатенации строк или интерполяции
   nil
 end
 
-# Exercise 2: String interpolation
-# Create a greeting message using string interpolation
-# Expected: greet("Alice") => "Hello, Alice! Welcome to Ruby."
+# Упражнение 2: Интерполяция строк
+# Создайте приветственное сообщение, используя интерполяцию строк
+# Ожидается: greet("Alice") => "Hello, Alice! Welcome to Ruby."
 def greet(name)
-  # TODO: Use #{} for string interpolation
+  # TODO: Используйте #{} для интерполяции строк
   nil
 end
 
-# Exercise 3: String methods
-# Convert a string to uppercase and return its length
-# Expected: process_string("hello") => ["HELLO", 5]
+# Упражнение 3: Методы строк
+# Преобразуйте строку в верхний регистр и верните её длину
+# Ожидается: process_string("hello") => ["HELLO", 5]
 def process_string(str)
-  # TODO: Use .upcase and .length methods
-  # Return an array [uppercase_string, length]
+  # TODO: Используйте методы .upcase и .length
+  # Верните массив [uppercase_string, length]
   nil
 end
 
-# Exercise 4: String slicing
-# Extract the first 3 characters from a string
-# Expected: first_chars("Ruby") => "Rub"
+# Упражнение 4: Нарезка строк
+# Извлеките первые 3 символа из строки
+# Ожидается: first_chars("Ruby") => "Rub"
 def first_chars(str)
-  # TODO: Use string slicing with [start..end] or [start, length]
+  # TODO: Используйте нарезку строк с [start..end] или [start, length]
   nil
 end
 
-# Exercise 5: String manipulation
-# Replace all occurrences of 'a' with 'o' in a string
-# Expected: replace_vowel("banana") => "bonono"
+# Упражнение 5: Манипуляции со строками
+# Замените все вхождения 'a' на 'o' в строке
+# Ожидается: replace_vowel("banana") => "bonono"
 def replace_vowel(str)
-  # TODO: Use .gsub method
+  # TODO: Используйте метод .gsub
   nil
 end
 
-# Exercise 6: Check substring
-# Check if a string contains a specific substring (case-insensitive)
-# Expected: contains_word?("I love Ruby", "ruby") => true
+# Упражнение 6: Проверка подстроки
+# Проверьте, содержит ли строка конкретную подстроку (без учёта регистра)
+# Ожидается: contains_word?("I love Ruby", "ruby") => true
 def contains_word?(text, word)
-  # TODO: Use .downcase and .include? methods
+  # TODO: Используйте методы .downcase и .include?
   nil
 end
 
 # ============================================
-# TEST CASES - Do not modify below this line
+# ТЕСТОВЫЕ ПРИМЕРЫ - Не изменяйте код ниже этой строки
 # ============================================
 
 def run_tests
@@ -118,14 +118,14 @@ def run_tests
 
   puts "\n" + "=" * 40
   if tests_passed == total_tests
-    puts "🎉 All tests passed! (#{tests_passed}/#{total_tests})"
-    puts "Great job! You've mastered Ruby strings!"
+    puts "🎉 Все тесты пройдены! (#{tests_passed}/#{total_tests})"
+    puts "Отличная работа! Вы освоили строки в Ruby!"
   else
-    puts "Tests passed: #{tests_passed}/#{total_tests}"
-    puts "Keep working on the remaining exercises."
+    puts "Тестов пройдено: #{tests_passed}/#{total_tests}"
+    puts "Продолжайте работу над оставшимися упражнениями."
   end
   puts "=" * 40
 end
 
-# Run the tests
+# Запуск тестов
 run_tests
