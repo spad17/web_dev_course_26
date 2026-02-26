@@ -10,7 +10,7 @@
 # Expected: check_number(5) => "positive"
 def check_number(num)
   # TODO: Use if/elsif/else statement
-  nil
+  
 end
 
 # Exercise 2: Ternary operator
