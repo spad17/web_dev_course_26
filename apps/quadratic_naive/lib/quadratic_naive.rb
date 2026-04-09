@@ -2,7 +2,7 @@ require_relative "quadratic_naive/version"
 
 module QuadraticNaive
   class Error < StandardError; end
-
+  
   # Наивное решение квадратного уравнения ax^2 + bx + c = 0
   # Возвращает массив из двух корней (или nil, если корней нет).
   def self.solve(a, b, c)
@@ -16,4 +16,5 @@ module QuadraticNaive
     x2 = (-b.to_f - sqrt_d) / (2 * a.to_f)
     [x1, x2]
   end
+
 end
